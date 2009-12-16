@@ -13,7 +13,7 @@ require "web_preview"
 require "erb"
 include ERB::Util
 
-RI_EXE = ENV['TM_RUBY_RI'] || [ 'qri', 'ri' ].find { |cmd| !cmd.to_s.empty? && (File.executable?(cmd) || ENV['PATH'].split(':').any? { |dir| File.executable? File.join(dir, cmd) }) ? cmd : false }
+RI_EXE = ENV['TM_RUBY_RI'] || [ 'qri', 'yri', 'fri', 'ri' ].find { |cmd| !cmd.to_s.empty? && (File.executable?(cmd) || ENV['PATH'].split(':').any? { |dir| File.executable? File.join(dir, cmd) }) ? cmd : false }
 
 term = ARGV.shift
 
